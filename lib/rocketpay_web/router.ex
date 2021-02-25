@@ -10,6 +10,9 @@ defmodule RocketpayWeb.Router do
 
     get "/:filename", WelcomeController, :index
 
+    post "/accounts/:account_id/deposit", AccountsController, :deposit
+    post "/accounts/:account_id/withdraw", AccountsController, :withdraw
+
     post "/users", UserController, :store
   end
 
