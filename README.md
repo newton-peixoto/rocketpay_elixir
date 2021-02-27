@@ -1,19 +1,51 @@
-# Rocketpay
+# <b> 💸 Rocketpay </b>
 
-To start your Phoenix server:
+### <b> Project made at NLW#04 hosted by Rocketseat </b>
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Start Phoenix endpoint with `mix phx.server`
+* Payment api that allows transactions between users. Also allows user to deposit and withdraw your own account.
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+# 🏃 <b> Run the application </b>
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+* ``git clone https://github.com/newton-peixoto/rocketpay_elixir.git``
 
-## Learn more
+* ``cd rocketpay_elixir``
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+* `` docker-compose up --build -d ``
+
+# ℹ️ <b> Routes </b>
+
+### <b> HTTP POST </b>
+
+* <b> /api/users </b> <br>
+        ```{
+            "name" :"some_name",
+            "email" : "something@email.com" ,
+            "age": 20,
+            "password" : "123456",
+            "nickname": "nick_name"
+        }   ``` 
+<br> <br>
+* <b> /api/accounts/{account_id}/deposit </b> <br> 
+        ```{
+            "value" : "10"
+        } ``` 
+<br> <br>
+* <b> /api/accounts/{account_id}/withdraw </b> <br> 
+       ``` {
+            "value" : 10
+        } ```
+<br> <br>
+* <b> /api/accounts/transaction </b> <br> 
+        ```{
+            "value" : 10,
+            "from"  : account_id,
+            "to"    : account_id
+        }```
+<br> <br>
+<b> For authenticated routes use header "Authorization: Basic YmFuYW5hOm5hbmljYTEyMw=="  </br>
+
+# 🚀 <b> Improvements </b>
+
+* <b> JWT auth instead of fixed basic auth </b>
+* <b> Write more tests </b>
+* <b> Allow user to schedule transactions </b>
